@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2019",
+    "module": "commonjs",
+    "allowJs": true,
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "importHelpers": true,
+    /* Strict Type-Checking Options */
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    /* Advanced Options */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
