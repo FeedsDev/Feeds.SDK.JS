@@ -2,6 +2,7 @@
   "compilerOptions": {
     /* Basic Options */
     "target": "ES2019",
+    "baseUrl": "src",
     "module": "commonjs",
     "allowJs": true,
     "declaration": true,
@@ -26,7 +27,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "src/**/*"
+    "src"
   ],
   "exclude": [
     "node_modules"

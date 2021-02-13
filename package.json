@@ -22,7 +22,8 @@
     "jsdoc": "^3.6.6",
     "prettier": "^2.2.1",
     "ts-node": "^9.0.0",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "tslib": "^1.10.0"
   },
   "author": "feedc",
   "license": "ISC",

@@ -1,21 +1,33 @@
 import { IOptions } from '../types'
+import * as api from '../api'
 
 export default class Users {
-  options: IOptions
+  workspaceId: number
 
   /**
     * Initiate client instance
     * @param options Required. Set options for HTTP requests
-  */
-  constructor(options: IOptions) {
-    this.options = options
+    */
+  constructor({ workspaceId }: IOptions) {
+    this.workspaceId = workspaceId
   }
 
-  getUser() {
-    console.log('USER')
+  /**
+    * Params for get user info
+    * @param {number} userId Required. User identifier which shold be updated
+    * @return {Promise<object>}
+    */
+  getUser(userId: number) {
+    return api.getUserApi({ workspaceId: this.workspaceId, userId })
   }
 
-  updateUser() {
-    console.log('Update user')
+  /**
+    * Params for get user info
+    * @param {number} userId Required. User identifier which shold be updated
+    * @param {any} body Optional. Properties to update
+    * @return {Promise<object>}
+    */
+  updateUser(userId: number, body: any) {
+    return api.updateUser({ workspaceId: this.workspaceId, userId, body })
   }
 }
