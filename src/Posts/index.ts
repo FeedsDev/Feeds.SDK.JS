@@ -1,25 +1,23 @@
 import { IOptions } from '../types'
+import * as api from '../api'
+import { IPostReq } from './types'
 
 export default class Posts {
-  options: IOptions
+  workspaceId: number
 
-  /**
-    * Initiate client instance
-    * @param options Required. Set options for HTTP requests
-  */
-  constructor(options: IOptions) {
-    this.options = options
+  constructor({ workspaceId }: IOptions) {
+    this.workspaceId = workspaceId
   }
 
-  getPost() {
-    console.log('Post')
+  getPost(postId: number) {
+    return api.getPostApi({ workspaceId: this.workspaceId, postId })
   }
 
-  createPost() {
-    console.log('Create post')
+  createPost(body: IPostReq) {
+    return api.createPostApi({ workspaceId: this.workspaceId, body })
   }
 
-  updatePost() {
-    console.log('Update post')
+  updatePost(postId: number, body: IPostReq) {
+    return api.updatePostApi({ workspaceId: this.workspaceId, postId, body })
   }
 }

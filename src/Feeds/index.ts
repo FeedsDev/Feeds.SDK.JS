@@ -1,21 +1,14 @@
 import { IOptions } from '../types'
+import * as api from '../api'
 
 export default class Feeds {
-  options: IOptions
+  workspaceId: number
 
-  /**
-    * Initiate client instance
-    * @param options Required. Set options for HTTP requests
-  */
-  constructor(options: IOptions) {
-    this.options = options
+  constructor({ workspaceId }: IOptions) {
+    this.workspaceId = workspaceId
   }
 
-  getFeed() {
-    console.log('Feed')
-  }
-
-  getFilteredFeeds() {
-    console.log('Filtered feeds')
+  getFeed(feedId: number) {
+    return api.getFeedApi({ workspaceId: this.workspaceId, feedId })
   }
 }
