@@ -1,5 +1,10 @@
 import { AxiosError } from 'axios'
 
+export interface IError {
+  errors: object
+  status: number | undefined
+}
+
 class SDKError {
   errors: object
   status: number | undefined
