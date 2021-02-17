@@ -5,7 +5,7 @@ Feeds.dev SDK
 Install via NPM:
 
 ```bash
-npm install feeds-sdk-js
+npm install @feeds.dev/sdk
 
 ```
 ## License
