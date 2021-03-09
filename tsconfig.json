@@ -24,7 +24,8 @@
     "allowSyntheticDefaultImports": true,
     /* Advanced Options */
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true
   },
   "include": [
     "src"
