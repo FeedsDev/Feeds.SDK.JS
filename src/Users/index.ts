@@ -11,11 +11,11 @@ export default class Users {
     this.workspaceId = workspaceId
   }
 
-  getUser(userId: number): Promise<AxiosResponse<IUserRes | IError>> {
+  getUser(userId: string): Promise<AxiosResponse<IUserRes | IError>> {
     return api.getUserApi({ workspaceId: this.workspaceId, userId })
   }
 
-  updateUser(userId: number, body: IUpdateUserReq): Promise<AxiosResponse<IUserRes | IError>> {
+  updateUser(userId: string, body: IUpdateUserReq): Promise<AxiosResponse<IUserRes | IError>> {
     return api.updateUser({ workspaceId: this.workspaceId, userId, body })
   }
 }

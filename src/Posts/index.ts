@@ -9,7 +9,7 @@ export default class Posts {
     this.workspaceId = workspaceId
   }
 
-  getPost(postId: number) {
+  getPost(postId: string) {
     return api.getPostApi({ workspaceId: this.workspaceId, postId })
   }
 
@@ -17,7 +17,7 @@ export default class Posts {
     return api.createPostApi({ workspaceId: this.workspaceId, body })
   }
 
-  updatePost(postId: number, body: IPostReq) {
+  updatePost(postId: string, body: IPostReq) {
     return api.updatePostApi({ workspaceId: this.workspaceId, postId, body })
   }
 }

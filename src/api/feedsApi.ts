@@ -1,6 +1,6 @@
 import axios from '../utils/axios'
 import SDKError from '../utils/Error'
-import { POSTS_API_URL } from '../config'
+import { FEED_API_URL } from '../config'
 
 interface IFeedReq {
   workspaceId: number,
@@ -9,7 +9,7 @@ interface IFeedReq {
 }
 
 export const getFeedApi = ({ workspaceId, feedId }: IFeedReq) => (
-  axios.get(`${POSTS_API_URL}/v1/pages/${workspaceId}/feeds/${feedId}`)
+  axios.get(`${FEED_API_URL}/pages/${workspaceId}/feeds/${feedId}`)
     .then(res => res.data)
     .catch(err => {
       throw new SDKError(err)

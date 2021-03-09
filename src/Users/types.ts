@@ -13,8 +13,9 @@ export interface IUpdateUserReq {
 
 export interface IUserRes {
   customer: {
-    id: number,
+    id: string,
     uniqueId?: string,
+    customerType: number,
     properties?: IProperty[]
   }
 }

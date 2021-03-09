@@ -4,26 +4,26 @@ import { POSTS_API_URL } from '../config'
 
 interface IPostReq {
   workspaceId: number,
-  postId?: number,
+  postId?: string,
   body?: object
 }
 
 export const createPostApi = ({ workspaceId, body }: IPostReq) => (
-  axios.post(`${POSTS_API_URL}/v1/pages/${workspaceId}/posts`, body)
+  axios.post(`${POSTS_API_URL}/pages/${workspaceId}/posts`, body)
     .catch(err => {
       throw new SDKError(err)
     })
 )
 
 export const getPostApi = ({ workspaceId, postId }: IPostReq) => (
-  axios.get(`${POSTS_API_URL}/v1/pages/${workspaceId}/posts/${postId}`)
+  axios.get(`${POSTS_API_URL}/pages/${workspaceId}/posts/${postId}`)
     .catch(err => {
       throw new SDKError(err)
     })
 )
 
 export const updatePostApi = ({ workspaceId, postId, body }: IPostReq) => (
-  axios.put(`${POSTS_API_URL}/v1/pages/${workspaceId}/posts/${postId}`, body)
+  axios.put(`${POSTS_API_URL}/pages/${workspaceId}/posts/${postId}`, body)
     .catch(err => {
       throw new SDKError(err)
     })

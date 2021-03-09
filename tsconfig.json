@@ -7,7 +7,7 @@
     "allowJs": true,
     "declaration": true,
     "sourceMap": true,
-    "outDir": "./dist",
+    "outDir": "dist",
     "importHelpers": true,
     /* Strict Type-Checking Options */
     "noImplicitAny": true,
@@ -30,6 +30,7 @@
     "src"
   ],
   "exclude": [
+    "dist",
     "node_modules"
   ]
 }
