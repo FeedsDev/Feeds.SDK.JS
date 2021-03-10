@@ -25,7 +25,11 @@
     /* Advanced Options */
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "lib": [
+      "es5",
+      "es6"
+    ]
   },
   "include": [
     "src"
