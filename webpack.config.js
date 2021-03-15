@@ -8,7 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
     library: '@feedsdev/sdk',
-    libraryTarget: 'commonjs2',
+    libraryTarget: 'umd',
     globalObject: 'this'
   },
   resolve: {
@@ -22,5 +22,5 @@ module.exports = {
         exclude: /node_modules/
       },
     ],
-  },
+  }
 }

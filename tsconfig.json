@@ -3,7 +3,7 @@
     /* Basic Options */
     "target": "es5",
     "baseUrl": "src",
-    "module": "es6",
+    "module": "CommonJS",
     "allowJs": true,
     "declaration": true,
     "sourceMap": true,

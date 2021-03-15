@@ -1,13 +1,13 @@
 {
   "name": "@feedsdev/sdk",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "tsc && node dist/index.js",
     "dev": "ts-node src/index.ts",
-    "tsc": "tsc",
+    "tsc": "rimraf ./dist && tsc",
     "build": "rimraf ./dist && webpack"
   },
   "repository": "git://github.com/FeedsDev/Feeds.SDK.JS.git",
