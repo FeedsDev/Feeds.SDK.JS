@@ -7,7 +7,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
-    libraryTarget: 'umd',
+    library: '@feedsdev/sdk',
+    libraryTarget: 'commonjs2',
     globalObject: 'this'
   },
   resolve: {
