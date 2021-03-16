@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     /* Basic Options */
-    "target": "es5",
+    "target": "esnext",
     "baseUrl": "src",
-    "module": "CommonJS",
+    "module": "esnext",
     "allowJs": true,
     "declaration": true,
     "sourceMap": true,
@@ -27,8 +27,10 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "lib": [
-      "es5",
-      "es6"
+      "es2017"
+    ],
+    "types": [
+      "node"
     ]
   },
   "include": [
