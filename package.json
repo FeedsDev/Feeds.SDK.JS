@@ -1,10 +1,9 @@
 {
   "name": "@feedsdev/sdk",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "scripts": {
     "start": "tsc && node dist/index.js",
     "dev": "ts-node src/index.ts",
@@ -13,7 +12,7 @@
   },
   "repository": "git://github.com/FeedsDev/Feeds.SDK.JS.git",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
     "axios": "^0.21.1"
