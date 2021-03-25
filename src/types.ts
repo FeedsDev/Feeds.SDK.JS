@@ -15,6 +15,7 @@ export interface IFeeds {
 export interface IPosts {
   getPost: (postId: string) => Promise<AxiosResponse<IPostRes>>,
   createPost: (body: IPostReq) => Promise<AxiosResponse<IPostRes>>,
+  publishPost: (postId: string) => Promise<AxiosResponse<IPostRes>>,
   updatePost: (postId: string, body: IPostReq) => Promise<AxiosResponse<IPostRes>>
 }
 
