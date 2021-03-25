@@ -17,6 +17,10 @@ export default class Posts {
     return api.createPostApi({ workspaceId: this.workspaceId, body })
   }
 
+  publishPost(postId: string) {
+    return api.publishPostApi({ workspaceId: this.workspaceId, postId })
+  }
+
   updatePost(postId: string, body: IPostReq) {
     return api.updatePostApi({ workspaceId: this.workspaceId, postId, body })
   }

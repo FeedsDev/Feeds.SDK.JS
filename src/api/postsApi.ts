@@ -15,6 +15,13 @@ export const createPostApi = ({ workspaceId, body }: IPostReq) => (
     })
 )
 
+export const publishPostApi = ({ workspaceId, postId }: IPostReq) => (
+  axios.post(`${POSTS_API_URL}/pages/${workspaceId}/posts/${postId}/status`, { status: 'active' })
+    .catch(err => {
+      throw new SDKError(err)
+    })
+)
+
 export const getPostApi = ({ workspaceId, postId }: IPostReq) => (
   axios.get(`${POSTS_API_URL}/pages/${workspaceId}/posts/${postId}`)
     .catch(err => {
