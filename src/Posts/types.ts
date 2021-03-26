@@ -13,7 +13,7 @@ export interface IPostReq {
 
 export interface IPostRes {
   post: {
-    id: number,
+    id: string,
     status: string,
     properties?: IProperty[]
   }
