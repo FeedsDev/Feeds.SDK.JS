@@ -10,9 +10,7 @@ let refreshedData: IOptions
 export const setAxiosConfig = (config: IOptions): void => {
   axiosInstance.interceptors.request.use(
     (axiosConfig) => {
-      if (config && !retry) {
-        axiosConfig.headers.Authorization = `Bearer ${config.accessToken}`
-      }
+      axiosConfig.headers.Authorization = `Bearer ${retry ? refreshedData.refreshToken : config.accessToken}`
 
       return axiosConfig
     }
@@ -28,9 +26,10 @@ export const setAxiosConfig = (config: IOptions): void => {
         return Promise.reject(error)
       }
 
-      if (error.response.status === 401 && !retry) {
+      if (error.response.status === 401) {
+        axios.defaults.headers.common['Authorization'] = `Bearer ${retry ? refreshedData.refreshToken : config.accessToken}`
+
         retry = true
-        axios.defaults.headers.common['Authorization'] = 'Bearer ' + config.refreshToken
 
         return axios.get(`${USERS_API_URL}/pages/${config.workspaceId}/customers/refreshToken`)
           .then(res => {
