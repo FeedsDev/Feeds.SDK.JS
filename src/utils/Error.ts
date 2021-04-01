@@ -10,7 +10,7 @@ class SDKError {
   status: number | undefined
 
   constructor(error: AxiosError) {
-    this.errors = error?.response?.data
+    this.errors = error?.response?.data.errors
     this.status = error?.response?.status
   }
 }

@@ -5,6 +5,7 @@ import { IUserRes, IUpdateUserReq } from './Users/types'
 
 export interface IOptions {
   accessToken: string,
+  refreshToken: string,
   workspaceId: number
 }
 
