@@ -27,7 +27,7 @@ export const setAxiosConfig = (config: IOptions): void => {
       }
 
       if (error.response.status === 401) {
-        axios.defaults.headers.common['Authorization'] = `Bearer ${retry ? refreshedData.refreshToken : config.accessToken}`
+        axios.defaults.headers.common['Authorization'] = `Bearer ${retry ? refreshedData.refreshToken : config.refreshToken}`
 
         retry = true
 

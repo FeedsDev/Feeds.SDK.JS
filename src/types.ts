@@ -14,13 +14,13 @@ export interface IFeeds {
 }
 
 export interface IPosts {
-  getPost: (postId: string) => Promise<AxiosResponse<IPostRes>>,
-  createPost: (body: IPostReq) => Promise<AxiosResponse<IPostRes>>,
-  publishPost: (postId: string) => Promise<AxiosResponse<IPostRes>>,
-  updatePost: (postId: string, body: IPostReq) => Promise<AxiosResponse<IPostRes>>
+  getPost: (postId: string) => Promise<void | AxiosResponse<IPostRes>>,
+  createPost: (body: IPostReq) => Promise<void | AxiosResponse<IPostRes>>,
+  publishPost: (postId: string) => Promise<void | AxiosResponse<IPostRes>>,
+  updatePost: (postId: string, body: IPostReq) => Promise<void | AxiosResponse<IPostRes>>
 }
 
 export interface IUsers {
-  getUser: (userId: string) => Promise<AxiosResponse<IUserRes>>
-  updateUser: (userId: string, body: IUpdateUserReq) => Promise<AxiosResponse<IUserRes>>
+  getUser: (userId: string) => Promise<void | AxiosResponse<IUserRes>>
+  updateUser: (userId: string, body: IUpdateUserReq) => Promise<void | AxiosResponse<IUserRes>>
 }
