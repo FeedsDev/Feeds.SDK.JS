@@ -5,11 +5,13 @@ import { FEED_API_URL } from '../config'
 interface IFeedReq {
   workspaceId: number,
   feedId?: number,
-  body?: object
+  body?: object,
+  pageToken?: string
 }
 
-export const getFeedApi = ({ workspaceId, feedId }: IFeedReq) => (
-  axios.get(`${FEED_API_URL}/pages/${workspaceId}/feeds/${feedId}`)
+export const getFeedApi = ({ workspaceId, feedId, pageToken, body }: IFeedReq) => {
+  const url = `${FEED_API_URL}/pages/${workspaceId}/feeds/${feedId}${pageToken ? `?pageToken=${pageToken}` : ''}`
+  return axios.get(url, body)
     .then(res => res.data)
     .catch(err => generateError(err))
-)
+}

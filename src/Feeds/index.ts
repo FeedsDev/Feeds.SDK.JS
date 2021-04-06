@@ -8,7 +8,7 @@ export default class Feeds {
     this.workspaceId = workspaceId
   }
 
-  getFeed(feedId: number) {
-    return api.getFeedApi({ workspaceId: this.workspaceId, feedId })
+  getFeed(feedId: number, pageToken: string, body: object) {
+    return api.getFeedApi({ workspaceId: this.workspaceId, feedId, pageToken, body })
   }
 }
