@@ -10,7 +10,8 @@ interface IFeedReq {
 }
 
 export const getFeedApi = ({ workspaceId, feedId, pageToken, body }: IFeedReq) => {
-  const url = `${FEED_API_URL}/pages/${workspaceId}/feeds/${feedId}${pageToken ? `?pageToken=${pageToken}` : ''}`
+  // pages/58/feed/69
+  const url = `${FEED_API_URL}/pages/${workspaceId}/feed/${feedId}${pageToken ? `?pageToken=${pageToken}` : ''}`
   return axios.get(url, body)
     .then(res => res.data)
     .catch(err => generateError(err))
