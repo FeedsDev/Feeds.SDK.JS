@@ -10,9 +10,8 @@ interface IFeedReq {
 }
 
 export const getFeedApi = ({ workspaceId, feedId, pageToken, body }: IFeedReq) => {
-  // pages/58/feed/69
   const url = `${FEED_API_URL}/pages/${workspaceId}/feed/${feedId}${pageToken ? `?pageToken=${pageToken}` : ''}`
-  return axios.get(url, body)
+  return axios.post(url, body)
     .then(res => res.data)
     .catch(err => generateError(err))
 }

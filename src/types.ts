@@ -10,7 +10,7 @@ export interface IOptions {
 }
 
 export interface IFeeds {
-  getFeed: (feedId: number, pageToken: string, body: object) => Promise<void | AxiosResponse<IFeedRes>>
+  getFeed: (feedId: number, pageToken?: string, body?: object) => Promise<void | AxiosResponse<IFeedRes>>
 }
 
 export interface IPosts {
