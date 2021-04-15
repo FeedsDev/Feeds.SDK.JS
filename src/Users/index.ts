@@ -1,7 +1,7 @@
 import { IOptions } from '../types'
 import { AxiosResponse } from 'axios'
 import * as api from '../api'
-import { IUpdateUserReq, IUserRes } from './types'
+import { IUpdateUserReq, IUserRes, IUserSearchReq, IUserSearchRes } from './types'
 
 export default class Users {
   workspaceId: number
@@ -16,5 +16,9 @@ export default class Users {
 
   updateUser(userId: string, body: IUpdateUserReq): Promise<void | AxiosResponse<IUserRes>> {
     return api.updateUser({ workspaceId: this.workspaceId, userId, body })
+  }
+
+  searchUsers(body: IUserSearchReq, pageToken?: string): Promise<void | AxiosResponse<IUserSearchRes>> {
+    return api.searchUsers({ workspaceId: this.workspaceId, body, pageToken })
   }
 }

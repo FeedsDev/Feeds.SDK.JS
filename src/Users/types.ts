@@ -19,3 +19,15 @@ export interface IUserRes {
     properties?: IProperty[]
   }
 }
+
+export interface IUserSearchReq {
+  query: string,
+  postType: number,
+  properties: Array<number>
+}
+
+export interface IUserSearchRes {
+  hasMore: boolean,
+  pageToken: string,
+  customers: Array<any>
+}

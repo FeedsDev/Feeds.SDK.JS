@@ -1,6 +1,6 @@
 import { IOptions } from '../types'
 import * as api from '../api'
-import { IPostReq } from './types'
+import { IPostReq, IPostSearchReq } from './types'
 
 export default class Posts {
   workspaceId: number
@@ -23,5 +23,9 @@ export default class Posts {
 
   updatePost(postId: string, body: IPostReq) {
     return api.updatePostApi({ workspaceId: this.workspaceId, postId, body })
+  }
+
+  searchPosts(body: IPostSearchReq, pageToken?: string) {
+    return api.searchPosts({ workspaceId: this.workspaceId, body, pageToken })
   }
 }

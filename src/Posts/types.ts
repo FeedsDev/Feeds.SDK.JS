@@ -18,3 +18,15 @@ export interface IPostRes {
     properties?: IProperty[]
   }
 }
+
+export interface IPostSearchReq {
+  query: string,
+  postType: number,
+  properties: Array<number>
+}
+
+export interface IPostSearchRes {
+  hasMore: boolean,
+  pageToken: string,
+  posts: Array<any>
+}

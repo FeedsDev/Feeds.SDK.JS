@@ -1,7 +1,7 @@
 import { IFeedRes } from './Feeds/types'
 import { AxiosResponse } from 'axios'
-import { IPostRes, IPostReq } from './Posts/types'
-import { IUserRes, IUpdateUserReq } from './Users/types'
+import { IPostRes, IPostReq, IPostSearchReq, IPostSearchRes } from './Posts/types'
+import { IUserRes, IUpdateUserReq, IUserSearchReq, IUserSearchRes } from './Users/types'
 
 export interface IOptions {
   accessToken: string,
@@ -17,10 +17,12 @@ export interface IPosts {
   getPost: (postId: string) => Promise<void | AxiosResponse<IPostRes>>,
   createPost: (body: IPostReq) => Promise<void | AxiosResponse<IPostRes>>,
   publishPost: (postId: string) => Promise<void | AxiosResponse<IPostRes>>,
-  updatePost: (postId: string, body: IPostReq) => Promise<void | AxiosResponse<IPostRes>>
+  updatePost: (postId: string, body: IPostReq) => Promise<void | AxiosResponse<IPostRes>>,
+  searchPosts: (body: IPostSearchReq, pageToken?: string) => Promise<void | AxiosResponse<IPostSearchRes>>
 }
 
 export interface IUsers {
-  getUser: (userId: string) => Promise<void | AxiosResponse<IUserRes>>
-  updateUser: (userId: string, body: IUpdateUserReq) => Promise<void | AxiosResponse<IUserRes>>
+  getUser: (userId: string) => Promise<void | AxiosResponse<IUserRes>>,
+  updateUser: (userId: string, body: IUpdateUserReq) => Promise<void | AxiosResponse<IUserRes>>,
+  searchUsers: (body: IUserSearchReq, pageToken?: string) => Promise<void | AxiosResponse<IUserSearchRes>>
 }
