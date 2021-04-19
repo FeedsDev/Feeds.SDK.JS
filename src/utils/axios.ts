@@ -2,14 +2,16 @@ import axios from 'axios'
 import { IOptions } from '../types'
 import { USERS_API_URL } from '../config'
 
-const axiosInstance = axios.create()
+let axiosInstance = axios.create()
+
+export const getAxiosInstance = () => axiosInstance
 
 const isRefreshToken = (url: string, workspaceId: number) => (
   url === `${USERS_API_URL}/pages/${workspaceId}/customers/refreshToken`
 )
 
 export const setAxiosConfig = (config: IOptions): void => {
-
+  axiosInstance = axios.create()
   let refreshedData: IOptions
   let retry = false
 

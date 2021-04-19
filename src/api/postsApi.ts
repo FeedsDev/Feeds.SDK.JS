@@ -1,4 +1,4 @@
-import axios from '../utils/axios'
+import { getAxiosInstance } from '../utils/axios'
 import generateError from '../utils/Error'
 import { POSTS_API_URL } from '../config'
 import { IPostSearchReq } from 'Posts/types'
@@ -16,27 +16,27 @@ interface ISearchReq {
 }
 
 export const createPostApi = ({ workspaceId, body }: IPostReq) => (
-  axios.post(`${POSTS_API_URL}/pages/${workspaceId}/posts`, body)
+  getAxiosInstance().post(`${POSTS_API_URL}/pages/${workspaceId}/posts`, body)
     .catch(err => generateError(err))
 )
 
 export const publishPostApi = ({ workspaceId, postId }: IPostReq) => (
-  axios.post(`${POSTS_API_URL}/pages/${workspaceId}/posts/${postId}/status`, { status: 'active' })
+  getAxiosInstance().post(`${POSTS_API_URL}/pages/${workspaceId}/posts/${postId}/status`, { status: 'active' })
     .catch(err => generateError(err))
 )
 
 export const getPostApi = ({ workspaceId, postId }: IPostReq) => (
-  axios.get(`${POSTS_API_URL}/pages/${workspaceId}/posts/${postId}`)
+  getAxiosInstance().get(`${POSTS_API_URL}/pages/${workspaceId}/posts/${postId}`)
     .catch(err => generateError(err))
 )
 
 export const updatePostApi = ({ workspaceId, postId, body }: IPostReq) => (
-  axios.put(`${POSTS_API_URL}/pages/${workspaceId}/posts/${postId}`, body)
+  getAxiosInstance().put(`${POSTS_API_URL}/pages/${workspaceId}/posts/${postId}`, body)
     .catch(err => generateError(err))
 )
 
 export const searchPosts = ({ workspaceId, body, pageToken }: ISearchReq) => {
   const token = pageToken ? `?pageToken=${pageToken}` : ''
-  return axios.post(`${POSTS_API_URL}/pages/${workspaceId}/search${token}`, body)
+  return getAxiosInstance().post(`${POSTS_API_URL}/pages/${workspaceId}/search${token}`, body)
     .catch(err => generateError(err))
 }
