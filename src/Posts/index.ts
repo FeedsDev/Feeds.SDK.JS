@@ -28,4 +28,8 @@ export default class Posts {
   searchPosts(body: IPostSearchReq, pageToken?: string) {
     return api.searchPosts({ workspaceId: this.workspaceId, body, pageToken })
   }
+
+  deletePost(postId: string) {
+    return api.deletePostApi({ workspaceId: this.workspaceId, postId })
+  }
 }

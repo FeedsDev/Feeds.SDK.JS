@@ -18,7 +18,8 @@ export interface IPosts {
   createPost: (body: IPostReq) => Promise<void | AxiosResponse<IPostRes>>,
   publishPost: (postId: string) => Promise<void | AxiosResponse<IPostRes>>,
   updatePost: (postId: string, body: IPostReq) => Promise<void | AxiosResponse<IPostRes>>,
-  searchPosts: (body: IPostSearchReq, pageToken?: string) => Promise<void | AxiosResponse<IPostSearchRes>>
+  searchPosts: (body: IPostSearchReq, pageToken?: string) => Promise<void | AxiosResponse<IPostSearchRes>>,
+  deletePost: (postId: string) => Promise<void | AxiosResponse<IPostRes>>
 }
 
 export interface IUsers {

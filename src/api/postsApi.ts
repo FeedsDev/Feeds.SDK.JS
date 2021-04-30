@@ -40,3 +40,8 @@ export const searchPosts = ({ workspaceId, body, pageToken }: ISearchReq) => {
   return getAxiosInstance().post(`${POSTS_API_URL}/pages/${workspaceId}/search${token}`, body)
     .catch(err => generateError(err))
 }
+
+export const deletePostApi = ({ workspaceId, postId }: IPostReq) => (
+  getAxiosInstance().delete(`${POSTS_API_URL}/pages/${workspaceId}/posts/${postId}`)
+    .catch(err => generateError(err))
+)
