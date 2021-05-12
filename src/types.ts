@@ -6,7 +6,8 @@ import { IUserRes, IUpdateUserReq, IUserSearchReq, IUserSearchRes } from './User
 export interface IOptions {
   accessToken: string,
   refreshToken: string,
-  workspaceId: number
+  workspaceId: number,
+  apiDomain?: string
 }
 
 export interface IFeeds {
