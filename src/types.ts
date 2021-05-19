@@ -20,7 +20,8 @@ export interface IPosts {
   publishPost: (postId: string) => Promise<void | AxiosResponse<IPostRes>>,
   updatePost: (postId: string, body: IPostReq) => Promise<void | AxiosResponse<IPostRes>>,
   searchPosts: (body: IPostSearchReq, pageToken?: string) => Promise<void | AxiosResponse<IPostSearchRes>>,
-  deletePost: (postId: string) => Promise<void | AxiosResponse<IPostRes>>
+  deletePost: (postId: string) => Promise<void | AxiosResponse<IPostRes>>,
+  trackInteraction: (id: string | number, body: any) => Promise<void | AxiosResponse<any>>
 }
 
 export interface IUsers {

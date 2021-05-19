@@ -32,4 +32,8 @@ export default class Posts {
   deletePost(postId: string) {
     return api.deletePostApi({ workspaceId: this.workspaceId, postId })
   }
+
+  trackInteraction(id: string | number, body: any) {
+    return api.trackInteractionApi({ workspaceId: this.workspaceId, id, body })
+  }
 }

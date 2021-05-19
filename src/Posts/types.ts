@@ -30,3 +30,9 @@ export interface IPostSearchRes {
   pageToken: string,
   posts: Array<any>
 }
+
+export interface IInteractionReq {
+  id: string | number,
+  workspaceId: number,
+  body: any
+}

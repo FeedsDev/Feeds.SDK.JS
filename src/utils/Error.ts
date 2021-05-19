@@ -16,7 +16,7 @@ class SDKError {
 }
 
 const generateError = (error: any) => {
-  if (error.response.data.errors[0].code !== 112 && error.response.data.errors[0].code !== 111) {
+  if (error.response?.data.errors[0].code !== 112 && error.response?.data.errors[0].code !== 111) {
     throw new SDKError(error)
   }
 }

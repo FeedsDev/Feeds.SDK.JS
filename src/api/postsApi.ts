@@ -1,7 +1,7 @@
 import { getAxiosInstance } from '../utils/axios'
 import generateError from '../utils/Error'
 import { POSTS_API_URL } from '../config'
-import { IPostSearchReq } from 'Posts/types'
+import { IPostSearchReq, IInteractionReq } from 'Posts/types'
 
 interface IPostReq {
   workspaceId: number,
@@ -43,5 +43,10 @@ export const searchPosts = ({ workspaceId, body, pageToken }: ISearchReq) => {
 
 export const deletePostApi = ({ workspaceId, postId }: IPostReq) => (
   getAxiosInstance().delete(`${POSTS_API_URL}/pages/${workspaceId}/posts/${postId}`)
+    .catch(err => generateError(err))
+)
+
+export const trackInteractionApi = ({ workspaceId, id, body }: IInteractionReq) => (
+  getAxiosInstance().post(`${POSTS_API_URL}/pages/${workspaceId}/interactions/${id}/track`, body)
     .catch(err => generateError(err))
 )
